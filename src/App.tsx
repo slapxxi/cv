@@ -10,7 +10,9 @@ const App = () => {
     >
       <aside
         className="col-[aside] grid auto-rows-min grid-cols-subgrid self-start overflow-y-auto 
-        bg-linear-to-b from-blue-950 to-blue-900 text-white 
+        bg-linear-to-b  
+        bg-[url('~/assets/pattern.svg'),linear-gradient(to_bottom,var(--color-blue-950),var(--color-blue-900))]
+        from-blue-950 to-blue-900 bg-size-[10px] text-white 
         md:sticky md:top-0 md:h-screen"
       >
         <div className="col-2 grid gap-y-8 p-4">
