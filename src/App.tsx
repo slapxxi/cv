@@ -50,6 +50,11 @@ const App = () => {
               ))}
             </ul>
           </section>
+
+          <section className="cv-section justify-items-start">
+            <h2 className="cv-title text-fluid-3xl">Education</h2>
+            <p>{config.education}</p>
+          </section>
         </div>
       </aside>
 

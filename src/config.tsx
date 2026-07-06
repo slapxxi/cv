@@ -17,6 +17,13 @@ const config = {
     'HTML',
     'Git',
   ],
+  education: (
+    <span>
+      Incomplete Higher Education in Mathematics, <br />
+      Pushkin Leningrad State University Faculty of Mathematics,
+      <br /> Physics and Computer Science
+    </span>
+  ),
   languages: ['Russian', 'English'],
   experience: [
     {
