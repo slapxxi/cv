@@ -9,12 +9,11 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    fallbackLng: 'en',
     resources: {
       en: { translation: en },
       ru: { translation: ru },
     },
-    lng: 'en',
-    fallbackLng: 'en',
     returnObjects: true,
   })
 
