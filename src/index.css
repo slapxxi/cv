@@ -13,7 +13,11 @@
 
 @layer components {
   .cv-section {
-    @apply grid gap-y-6;
+    @apply grid gap-y-6 text-white/90;
+
+    .cv-title {
+      @apply text-white;
+    }
   }
 
   .cv-text {

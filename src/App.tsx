@@ -1,7 +1,20 @@
 import profileImage from '~/assets/me.jpg'
+import { useTranslation } from 'react-i18next'
 import config from './config'
 
 const App = () => {
+  const { t } = useTranslation()
+
+  const skills = t('skillsList', { returnObjects: true }) as string[]
+  const languages = t('languagesList', { returnObjects: true }) as string[]
+  const experience = t('experienceList', { returnObjects: true }) as {
+    title: string
+    at: string
+    duration: string
+    location: string
+    description: string
+  }[]
+
   return (
     <div
       className="grid min-h-screen 
@@ -23,7 +36,7 @@ const App = () => {
           />
 
           <section className="cv-section justify-items-start">
-            <h2 className="cv-title">Contact</h2>
+            <h2 className="cv-title">{t('contact')}</h2>
             <ul className="grid gap-3">
               {config.contacts.map((contact) => (
                 <li key={contact.name}>
@@ -40,26 +53,26 @@ const App = () => {
           </section>
 
           <section className="cv-section justify-items-start">
-            <h2 className="cv-title text-fluid-3xl">Skills</h2>
+            <h2 className="cv-title text-fluid-3xl">{t('skills')}</h2>
             <ul className="grid gap-2 md:grid-cols-2">
-              {config.skills.map((skill) => (
+              {skills.map((skill) => (
                 <li key={skill}>{skill}</li>
               ))}
             </ul>
           </section>
 
           <section className="cv-section justify-items-start">
-            <h2 className="cv-title text-fluid-3xl">Languages</h2>
+            <h2 className="cv-title text-fluid-3xl">{t('languages')}</h2>
             <ul className="grid gap-2">
-              {config.languages.map((language) => (
+              {languages.map((language) => (
                 <li key={language}>{language}</li>
               ))}
             </ul>
           </section>
 
           <section className="cv-section justify-items-start">
-            <h2 className="cv-title text-fluid-3xl">Education</h2>
-            <p>{config.education}</p>
+            <h2 className="cv-title text-fluid-3xl">{t('education')}</h2>
+            <p>{t('educationValue')}</p>
           </section>
         </div>
       </aside>
@@ -68,42 +81,43 @@ const App = () => {
         <div className="col-1 grid auto-rows-min gap-y-8 p-4">
           {/* name */}
           <header className="grid gap-2 bg-gray-300 p-7 text-center">
-            <h1 className="title text-fluid-5xl text-gray-800">
-              Slava Pavlutin
-            </h1>
+            <h1 className="title text-fluid-5xl text-gray-800">{t('name')}</h1>
             <hr className="mx-auto w-full max-w-prose border border-slate-900/20" />
             <h2 className="text-fluid-3xl text-gray-600 uppercase">
-              Frontend Developer
+              {t('position')}
             </h2>
           </header>
 
           {/* summary */}
           <section className="cv-section">
-            <h2 className="cv-title text-fluid-3xl text-blue-900">Summary</h2>
-            <p className="cv-text">{config.summary}</p>
+            <h2 className="cv-title text-fluid-3xl text-blue-900">
+              {t('summary')}
+            </h2>
+            <p className="cv-text">{t('summaryValue')}</p>
           </section>
 
           {/* experience */}
           <section className="cv-section">
             <h2 className="cv-title text-fluid-3xl text-blue-900">
-              Experience
+              {t('experience')}
             </h2>
 
-            {config.experience.map((experience) => (
+            {experience.map((experience) => (
               <article key={experience.title} className="grid grid-cols-2">
                 <h3 className="cv-subtitle text-slate-950">
                   {experience.title}
                 </h3>
-                <h4 className="col-1">{experience.at}</h4>
+                <h4 className="text-slate-950">{experience.at}</h4>
                 <div className="col-2 row-1 justify-self-end text-fluid-base font-semibold text-blue-900">
                   {experience.duration}
                 </div>
                 <div className="justify-self-end text-fluid-base font-semibold text-blue-900">
                   {experience.location}
                 </div>
-                <p className="cv-text col-span-full my-4">
-                  {experience.description}
-                </p>
+                <div
+                  className="cv-content cv-text col-span-full my-4"
+                  dangerouslySetInnerHTML={{ __html: experience.description }}
+                />
               </article>
             ))}
           </section>

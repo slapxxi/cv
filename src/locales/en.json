@@ -1,0 +1,46 @@
+{
+  "contact": "Contact",
+  "education": "Education",
+  "educationValue": "Incomplete Higher Education in Mathematics, Pushkin Leningrad State University Faculty of Mathematics, Physics and Computer Science",
+  "experience": "Experience",
+  "languages": "Languages",
+  "name": "Slava Pavlutin",
+  "position": "Frontend Developer",
+  "skills": "Skills",
+  "summary": "Summary",
+  "summaryValue": "Frontend developer experienced in building fast, adaptive, and user-friendly interfaces. Specialized in developing complex UI systems using React and TypeScript with a strong understanding of browser internals and frontend optimization techniques.",
+  "skillsList": [
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Redux",
+    "GraphQL",
+    "CSS",
+    "HTML",
+    "Git"
+  ],
+  "experienceList": [
+    {
+      "title": "Frontend Developer",
+      "at": "IDF Software",
+      "duration": "2025 - 2026",
+      "location": "Minsk, Belarus",
+      "description": "<ul> <li> Developed and maintained large-scale React and Next.js applications serving thousands of users. </li> <li> Designed scalable frontend architectures using TypeScript and modern React patterns. </li> <li> Implemented advanced state management solutions using Redux, Redux Toolkit </li> <li> Created reusable design system components documented with Storybook. </li> <li> Developed custom animations and user interactions using React Spring and modern CSS techniques. </li> <li> Integrated complex REST and GraphQL services, including authentication, caching, and optimistic updates. </li> <li> Collaborated with backend teams to support frontend requirements. </li> <li> Implemented comprehensive testing strategies using TDD, Vitest, Jest, Playwright. </li> <li> Improved Core Web Vitals through code splitting, lazy loading, image optimization, and rendering optimizations. </li> <li> Contributed to CI/CD pipelines, release processes, and deployment automation. </li> <li> Mentored junior developers through code reviews and knowledge-sharing sessions. </li> </ul>"
+    },
+    {
+      "title": "React Developer",
+      "at": "Innowise",
+      "duration": "2024 - 2025",
+      "location": "Minsk, Belarus",
+      "description": "<ul> <li> Developed single-page applications using React and TypeScript. </li> <li> Built server-side rendered and statically generated applications with Next.js. </li> <li> Implemented client-side navigation and protected routes using React Router v6. </li> <li> Integrated REST and GraphQL APIs with advanced caching and data synchronization strategies. </li> <li> Managed application state using Redux Toolkit and React Query. </li> <li> Introduced TypeScript into existing JavaScript codebases, improving maintainability and reducing runtime errors. </li> <li> Collaborated with backend teams to define API contracts and improve integration workflows. </li> <li> Optimized application performance through lazy loading, code splitting, and bundle analysis. </li> <li> Developed reusable component libraries shared across multiple projects. </li> <li> Implemented automated testing using Jest, React Testing Library, and Cypress. </li> </ul>"
+    },
+    {
+      "title": "HTML/CSS Developer",
+      "at": "PixelBot Digital",
+      "duration": "2022 - 2024",
+      "location": "Saint Petersburg, Russia",
+      "description": "<ul> <li> Collaborated with designers to transform Figma mockups into accessible, responsive, and highly performant user interfaces. </li> <li> Developed reusable UI components using semantic HTML5, SCSS, and BEM methodology. </li> <li> Implemented responsive layouts using CSS Flexbox and CSS Grid. </li> <li> Developed interactive 3D experiences using Three.js, React Three Fiber, and Blender-generated assets. </li> <li> Implemented responsive, cross-browser user interfaces using semantic HTML5, CSS3, Flexbox, Grid, and Pixel Perfect methodologies based on Figma designs. </li> <li> Optimized page performance by reducing CSS and JavaScript bundle sizes. </li> <li> Integrated third-party APIs and dynamic content using JavaScript and AJAX. </li> <li> Improved accessibility by applying semantic markup and WCAG best practices. </li> <li> Participated in code reviews and Git-based development workflows. </li> <li> Maintained cross-browser compatibility across Chrome, Firefox, Safari, and Edge. </li> </ul>"
+    }
+  ],
+  "languagesList": ["Russian", "English"]
+}
