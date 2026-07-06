@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="grid min-h-screen grid-cols-[1fr_minmax(auto,480px)_minmax(auto,960px)_1fr] gap-2">
       <aside className="col-[1/3] grid auto-rows-min grid-cols-subgrid bg-blue-900 text-white">
-        <div className="sticky top-0 col-2 grid gap-y-4 p-4">
+        <div className="sticky top-0 col-2 grid gap-y-8 p-4">
           <img
             src={profileImage}
             alt=""
@@ -28,16 +28,26 @@ const App = () => {
               ))}
             </ul>
           </section>
+
+          <section className="cv-section justify-items-start">
+            <h2 className="cv-title text-fluid-3xl">Languages</h2>
+            <ul className="grid gap-1">
+              {config.languages.map((language) => (
+                <li key={language}>{language}</li>
+              ))}
+            </ul>
+          </section>
         </div>
       </aside>
 
       <main className="col-[3/6] grid grid-cols-subgrid">
         <div className="col-1 grid auto-rows-min gap-y-8 p-4">
           {/* name */}
-          <header className="grid gap-4 bg-gray-300 p-4 text-center">
+          <header className="grid gap-2 bg-gray-300 p-7 text-center">
             <h1 className="title text-fluid-5xl text-gray-800">
               Slava Pavlutin
             </h1>
+            <hr className="w-full mx-auto border max-w-prose border-slate-900/20" />
             <h2 className="text-fluid-3xl text-gray-600 uppercase">
               Frontend Developer
             </h2>
