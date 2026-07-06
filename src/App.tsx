@@ -30,8 +30,17 @@ const App = () => {
           </section>
 
           <section className="cv-section justify-items-start">
+            <h2 className="cv-title text-fluid-3xl">Skills</h2>
+            <ul className="grid gap-2 md:grid-cols-2">
+              {config.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="cv-section justify-items-start">
             <h2 className="cv-title text-fluid-3xl">Languages</h2>
-            <ul className="grid gap-1">
+            <ul className="grid gap-2">
               {config.languages.map((language) => (
                 <li key={language}>{language}</li>
               ))}

@@ -7,6 +7,16 @@ const config = {
   summary: `Frontend developer experienced in building fast, adaptive, and user-friendly interfaces. 
     Specialized in developing complex UI systems using React and TypeScript with a 
     strong understanding of browser internals and frontend optimization techniques.`,
+  skills: [
+    'React',
+    'TypeScript',
+    'Next.js',
+    'Redux',
+    'GraphQL',
+    'CSS',
+    'HTML',
+    'Git',
+  ],
   languages: ['Russian', 'English'],
   experience: [
     {
