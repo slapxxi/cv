@@ -5,11 +5,15 @@ const App = () => {
   return (
     <div
       className="grid min-h-screen 
-      grid-cols-[[aside]1fr_[main]auto[main-end]_1fr[aside-end]]
-      gap-2 md:grid-cols-[[aside]1fr_minmax(auto,480px)[aside-end_main]minmax(auto,960px)_1fr[main-end]]"
+      grid-cols-[[aside]1fr_[main]auto[main-end]_1fr[aside-end]] gap-2 
+      md:grid-cols-[[aside]1fr_minmax(auto,480px)[aside-end_main]minmax(auto,960px)_1fr[main-end]]"
     >
-      <aside className="col-[aside] grid auto-rows-min grid-cols-subgrid bg-blue-900 text-white">
-        <div className="top-0 col-2 grid gap-y-8 overflow-y-auto p-4 md:sticky md:max-h-screen">
+      <aside
+        className="col-[aside] grid auto-rows-min grid-cols-subgrid self-start overflow-y-auto 
+        bg-linear-to-b from-blue-950 to-blue-900 text-white 
+        md:sticky md:top-0 md:h-screen"
+      >
+        <div className="col-2 grid gap-y-8 p-4">
           <img
             src={profileImage}
             alt=""
