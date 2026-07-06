@@ -3,9 +3,13 @@ import config from './config'
 
 const App = () => {
   return (
-    <div className="grid min-h-screen grid-cols-[1fr_minmax(auto,480px)_minmax(auto,960px)_1fr] gap-2">
-      <aside className="col-[1/3] grid auto-rows-min grid-cols-subgrid bg-blue-900 text-white">
-        <div className="sticky top-0 col-2 grid gap-y-8 p-4">
+    <div
+      className="grid min-h-screen 
+      grid-cols-[[aside]1fr_[main]auto[main-end]_1fr[aside-end]]
+      md:grid-cols-[[aside]1fr_minmax(auto,480px)[aside-end_main]minmax(auto,960px)_1fr[main-end]] gap-2"
+    >
+      <aside className="col-[aside] grid auto-rows-min grid-cols-subgrid bg-blue-900 text-white">
+        <div className="md:sticky top-0 col-2 grid md:max-h-screen gap-y-8 overflow-y-auto p-4">
           <img
             src={profileImage}
             alt=""
@@ -49,14 +53,14 @@ const App = () => {
         </div>
       </aside>
 
-      <main className="col-[3/6] grid grid-cols-subgrid">
+      <main className="col-[main] grid grid-cols-subgrid">
         <div className="col-1 grid auto-rows-min gap-y-8 p-4">
           {/* name */}
           <header className="grid gap-2 bg-gray-300 p-7 text-center">
             <h1 className="title text-fluid-5xl text-gray-800">
               Slava Pavlutin
             </h1>
-            <hr className="w-full mx-auto border max-w-prose border-slate-900/20" />
+            <hr className="mx-auto w-full max-w-prose border border-slate-900/20" />
             <h2 className="text-fluid-3xl text-gray-600 uppercase">
               Frontend Developer
             </h2>
