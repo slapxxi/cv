@@ -11,4 +11,8 @@
       content: '';
     }
   }
+
+  .cv-subtitle {
+    @apply font-semibold text-fluid-lg;
+  }
 }

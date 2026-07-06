@@ -17,6 +17,15 @@
   }
 
   .cv-text {
-    @apply text-fluid-lg text-slate-950;
+    @apply text-fluid-lg text-slate-950 opacity-90;
+  }
+
+  .cv-content {
+    @apply text-fluid-base text-slate-950;
+
+    ul {
+      list-style: disc;
+      padding-left: calc(var(--spacing) * 4);
+    }
   }
 }
