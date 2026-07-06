@@ -1,57 +1,31 @@
-import MessageIcon from '~/assets/message.svg?react'
-import GridIcon from '~/assets/grid.svg?react'
-import EyeIcon from '~/assets/eye.svg?react'
+import MailIcon from '~/assets/mail-icon.svg?react'
+import TelegramIcon from '~/assets/telegram-icon.svg?react'
+import PhoneIcon from '~/assets/phone-icon.svg?react'
+import LinkedinIcon from '~/assets/linkedin-icon.svg?react'
 
-type Config = {
-  demoFeatures: string[]
-  text: {
-    trial: string
-    trialExtra: string
-    terms: string
-    request: string
-    touch: string
-    match: string
-  }
-  ticker: {
-    text: string
-    Icon: any
-  }[]
-  nav: string[]
-  footerSections: {
-    title: string
-    links: string[]
-  }[]
-}
-
-const config: Config = {
-  demoFeatures: [
-    'Ready in minutes, not weeks',
-    'Real data, real workflows',
-    'No credit card required',
-  ],
-  ticker: [
-    { text: 'Centralized Communication', Icon: MessageIcon },
-    { text: 'Built-in policy builder', Icon: GridIcon },
-    { text: 'AI-powered assistants', Icon: EyeIcon },
-    { text: 'No complex setup', Icon: MessageIcon },
-    { text: 'No IT department required', Icon: GridIcon },
-  ],
-  text: {
-    trial: 'Free Trial',
-    trialExtra: '14-day free trial —  included with any plan',
-    terms: `By clicking the button, you agree to our Privacy Policy and consent to the processing of your personal data`,
-    request: 'Send request',
-    touch: `Get in touch`,
-    match: `We'll match a plan to your team and volume`,
-  },
-  nav: ['Features', 'How-it-works', 'Pricing', 'About', 'Contacts'],
-  footerSections: [
-    { title: 'Home', links: [] },
+const config = {
+  summary: `Frontend Developer with over 5 years of experience in building interfaces optimized for performance, responsiveness, and user experience. Specialized in developing complex UIs with modern technologies such as React and TypeScript, with a deep understanding of browser internals and frontend optimization.`,
+  contacts: [
     {
-      title: 'Product',
-      links: ['Features', 'How-it-works', 'Pricing', 'Free Trial'],
+      name: 'sl.pavlutin@gmail.com',
+      Icon: MailIcon,
+      href: 'mailto:slava@pavlutin.dev',
     },
-    { title: 'Company', links: ['About Us'] },
+    {
+      name: 'LinkedIn',
+      Icon: LinkedinIcon,
+      href: 'https://www.linkedin.com/in/%D0%B2%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2-%D0%BF%D0%B0%D0%B2%D0%BB%D1%83%D1%82%D0%B8%D0%BD-9417a2355/',
+    },
+    {
+      name: '@slapxxi',
+      Icon: TelegramIcon,
+      href: 'https://t.me/slapxxi',
+    },
+    {
+      name: '+375 (44) 719 30 35',
+      Icon: PhoneIcon,
+      href: 'tel:+375447193035',
+    },
   ],
 }
 

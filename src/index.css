@@ -9,3 +9,14 @@
 @import '~/styles/components/wrapper.css';
 @import '~/styles/components/button.css';
 @import '~/styles/components/title.css';
+@import '~/styles/components/link.css';
+
+@layer components {
+  .cv-section {
+    @apply grid gap-y-6;
+  }
+
+  .cv-text {
+    @apply text-fluid-lg text-slate-950;
+  }
+}
