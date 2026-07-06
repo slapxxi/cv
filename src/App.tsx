@@ -6,10 +6,10 @@ const App = () => {
     <div
       className="grid min-h-screen 
       grid-cols-[[aside]1fr_[main]auto[main-end]_1fr[aside-end]]
-      md:grid-cols-[[aside]1fr_minmax(auto,480px)[aside-end_main]minmax(auto,960px)_1fr[main-end]] gap-2"
+      gap-2 md:grid-cols-[[aside]1fr_minmax(auto,480px)[aside-end_main]minmax(auto,960px)_1fr[main-end]]"
     >
       <aside className="col-[aside] grid auto-rows-min grid-cols-subgrid bg-blue-900 text-white">
-        <div className="md:sticky top-0 col-2 grid md:max-h-screen gap-y-8 overflow-y-auto p-4">
+        <div className="top-0 col-2 grid gap-y-8 overflow-y-auto p-4 md:sticky md:max-h-screen">
           <img
             src={profileImage}
             alt=""
