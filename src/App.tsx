@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import config from './config'
 
 const App = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const skills = t('skillsList', { returnObjects: true }) as string[]
   const languages = t('languagesList', { returnObjects: true }) as string[]
@@ -14,6 +14,10 @@ const App = () => {
     location: string
     description: string
   }[]
+
+  const onChangeLanguage = (e: React.ChangeEvent<HTMLFormElement>) => {
+    i18n.changeLanguage(e.target.value)
+  }
 
   return (
     <div
@@ -29,10 +33,50 @@ const App = () => {
         md:sticky md:top-0 md:h-screen"
       >
         <div className="col-2 grid gap-y-8 p-4">
+          <form
+            onChange={onChangeLanguage}
+            className="col-1 row-1 grid grid-cols-[1fr_min-content_1fr] self-center 
+            justify-self-start rounded border border-white/20 p-0 text-fluid-base text-white/40"
+          >
+            <label
+              htmlFor="ru"
+              className="p-2 data-[active='true']:bg-white/20 data-[active='true']:text-white"
+              data-active={i18n.language === 'ru'}
+            >
+              <span>RU</span>
+              <input
+                type="radio"
+                value="ru"
+                name="lang"
+                id="ru"
+                className="hidden"
+                defaultChecked={i18n.language === 'ru'}
+              />
+            </label>
+
+            <hr className="h-full w-px bg-white/20" />
+
+            <label
+              htmlFor="en"
+              className="p-2 data-[active='true']:bg-white/10 data-[active='true']:text-white"
+              data-active={i18n.language === 'en'}
+            >
+              <span>EN</span>
+              <input
+                type="radio"
+                value="en"
+                name="lang"
+                id="en"
+                className="hidden"
+                defaultChecked={i18n.language === 'en'}
+              />
+            </label>
+          </form>
+
           <img
             src={profileImage}
             alt=""
-            className="mx-auto aspect-square size-24 self-center justify-self-center rounded-full border-4 object-cover md:size-40"
+            className="col-1 row-1 mx-auto aspect-square size-24 self-center justify-self-center rounded-full border-4 object-cover md:size-40"
           />
 
           <section className="cv-section justify-items-start">
