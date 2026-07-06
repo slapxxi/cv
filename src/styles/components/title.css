@@ -1,0 +1,14 @@
+@layer components {
+  .title {
+    @apply font-title font-bold;
+  }
+
+  .cv-title {
+    @apply text-fluid-3xl inline-grid font-semibold uppercase;
+
+    &::after {
+      @apply block w-full h-0.5 bg-white mt-1;
+      content: '';
+    }
+  }
+}

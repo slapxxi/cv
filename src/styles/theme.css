@@ -1,0 +1,12 @@
+@theme {
+  --color-xpink-600: #ef2a82;
+
+  --color-xblue-900: #172755;
+  --color-xblue-950: #11214e;
+
+  --color-xslate-400: #8794ba;
+  --color-xslate-600: #465b95;
+
+  --font-title: 'Roboto', sans-serif;
+  --font-text: 'Roboto', sans-serif;
+}

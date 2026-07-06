@@ -1,0 +1,9 @@
+@layer components {
+  .btn {
+    @apply rounded-full border border-transparent bg-xpink-600 hover:opacity-80 p-2.5 text-white;
+  }
+
+  .btn-outline {
+    @apply border-xslate-600 text-xslate-400 bg-transparent;
+  }
+}
