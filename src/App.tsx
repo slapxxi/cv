@@ -1,9 +1,13 @@
-import profileImage from '~/assets/me.jpg'
 import { useTranslation } from 'react-i18next'
+import LightThemeIcon from '~/assets/light-theme-icon.svg?react'
+import DarkThemeIcon from '~/assets/dark-theme-icon.svg?react'
+import profileImage from '~/assets/me.jpg'
+import { useTheme } from '~/hooks'
 import config from './config'
 
 const App = () => {
   const { t, i18n } = useTranslation()
+  const { theme, setTheme } = useTheme()
 
   const skills = t('skillsList', { returnObjects: true }) as string[]
   const languages = t('languagesList', { returnObjects: true }) as string[]
@@ -19,11 +23,17 @@ const App = () => {
     i18n.changeLanguage(e.target.value)
   }
 
+  const onChangeTheme = (e: React.ChangeEvent<HTMLFormElement>) => {
+    setTheme(e.target.value)
+  }
+
   return (
     <div
       className="grid min-h-screen 
-      grid-cols-[[aside]1fr_[main]auto[main-end]_1fr[aside-end]] gap-2 
-      md:grid-cols-[[aside]1fr_minmax(auto,480px)[aside-end_main]minmax(auto,960px)_1fr[main-end]]"
+      grid-cols-[[aside]1fr_[main]auto[main-end]_1fr[aside-end]] gap-2
+      md:grid-cols-[[aside]1fr_minmax(auto,480px)[aside-end_main]minmax(auto,960px)_1fr[main-end]] dark:bg-zinc-950 
+      dark:text-white"
+      data-theme={theme}
     >
       <aside
         className="col-[aside] grid auto-rows-min grid-cols-subgrid self-start overflow-y-auto 
@@ -69,6 +79,52 @@ const App = () => {
                 id="en"
                 className="hidden"
                 defaultChecked={i18n.language === 'en'}
+              />
+            </label>
+          </form>
+
+          <form
+            onChange={onChangeTheme}
+            className="col-1 row-1 grid grid-cols-[1fr_min-content_1fr] self-center 
+            justify-self-end rounded border border-white/20 p-0 text-fluid-base text-white/40"
+          >
+            <label
+              htmlFor="dark"
+              className="inline-grid place-items-center p-2 
+              data-[active='true']:bg-white/10 data-[active='true']:text-white"
+              data-active={theme === 'dark'}
+            >
+              <span title="Dark Theme">
+                <DarkThemeIcon className="size-4" />
+              </span>
+              <input
+                type="radio"
+                value="dark"
+                name="theme"
+                id="dark"
+                className="hidden"
+                defaultChecked={theme === 'dark'}
+              />
+            </label>
+
+            <hr className="h-full w-px bg-white/20" />
+
+            <label
+              htmlFor="light"
+              className="inline-grid place-items-center p-2 
+              data-[active='true']:bg-white/10 data-[active='true']:text-white"
+              data-active={theme === 'light'}
+            >
+              <span title="Light Theme">
+                <LightThemeIcon className="size-5" />
+              </span>
+              <input
+                type="radio"
+                value="light"
+                name="theme"
+                id="light"
+                className="hidden"
+                defaultChecked={theme === 'light'}
               />
             </label>
           </form>
@@ -124,17 +180,19 @@ const App = () => {
       <main className="col-[main] grid grid-cols-subgrid">
         <div className="col-1 grid auto-rows-min gap-y-8 p-4">
           {/* name */}
-          <header className="grid gap-2 bg-gray-300 p-7 text-center">
-            <h1 className="title text-fluid-5xl text-gray-800">{t('name')}</h1>
-            <hr className="mx-auto w-full max-w-prose border border-slate-900/20" />
-            <h2 className="text-fluid-3xl text-gray-600 uppercase">
+          <header className="grid gap-2 rounded bg-gray-300 p-7 text-center dark:bg-zinc-800">
+            <h1 className="title text-fluid-5xl text-zinc-800 dark:text-zinc-200">
+              {t('name')}
+            </h1>
+            <hr className="mx-auto w-full max-w-prose border border-slate-900/20 dark:border-zinc-700/50" />
+            <h2 className="text-fluid-3xl text-gray-600 uppercase dark:text-zinc-400/80">
               {t('position')}
             </h2>
           </header>
 
           {/* summary */}
           <section className="cv-section">
-            <h2 className="cv-title text-fluid-3xl text-blue-900">
+            <h2 className="cv-title text-fluid-3xl text-blue-900 dark:text-blue-600">
               {t('summary')}
             </h2>
             <p className="cv-text">{t('summaryValue')}</p>
@@ -142,20 +200,22 @@ const App = () => {
 
           {/* experience */}
           <section className="cv-section">
-            <h2 className="cv-title text-fluid-3xl text-blue-900">
+            <h2 className="cv-title text-fluid-3xl text-blue-900 dark:text-blue-600">
               {t('experience')}
             </h2>
 
             {experience.map((experience) => (
               <article key={experience.title} className="grid grid-cols-2">
-                <h3 className="cv-subtitle text-slate-950">
+                <h3 className="cv-subtitle text-slate-950 dark:text-zinc-200">
                   {experience.title}
                 </h3>
-                <h4 className="text-slate-950">{experience.at}</h4>
-                <div className="col-2 row-1 justify-self-end text-fluid-base font-semibold text-blue-900">
+                <h4 className="text-slate-950 dark:text-zinc-300/80">
+                  {experience.at}
+                </h4>
+                <div className="col-2 row-1 justify-self-end text-fluid-base font-semibold text-blue-900 dark:text-blue-600">
                   {experience.duration}
                 </div>
-                <div className="justify-self-end text-fluid-base font-semibold text-blue-900">
+                <div className="justify-self-end text-fluid-base font-semibold text-blue-900 dark:text-blue-600/90">
                   {experience.location}
                 </div>
                 <div
