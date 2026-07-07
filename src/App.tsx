@@ -36,16 +36,15 @@ const App = () => {
       data-theme={theme}
     >
       <aside
-        className="col-[aside] grid auto-rows-min grid-cols-subgrid self-start overflow-y-auto 
-        bg-linear-to-b  
-        bg-[url('~/assets/pattern.svg'),linear-gradient(to_bottom,var(--color-blue-950),var(--color-blue-900))]
-        from-blue-950 to-blue-900 bg-size-[10px] text-white 
+        className="col-[aside] grid auto-rows-min grid-cols-subgrid self-start overflow-y-auto bg-linear-to-b  
+        bg-[url('~/assets/pattern.svg'),linear-gradient(to_bottom,var(--color-pink-950),var(--color-pink-900))]
+        from-pink-950 to-pink-900 bg-size-[30px] text-white 
         md:sticky md:top-0 md:h-screen"
       >
         <div className="col-2 grid gap-y-8 p-4">
           <form
             onChange={onChangeLanguage}
-            className="col-1 row-1 grid grid-cols-[1fr_min-content_1fr] self-center 
+            className="col-1 row-1 grid grid-cols-[1fr_1px_1fr] self-center overflow-hidden
             justify-self-start rounded border border-white/20 p-0 text-fluid-base text-white/40"
           >
             <label
@@ -64,7 +63,7 @@ const App = () => {
               />
             </label>
 
-            <hr className="h-full w-px bg-white/20" />
+            <hr className="h-full text-transparent bg-white/20" />
 
             <label
               htmlFor="en"
@@ -85,7 +84,7 @@ const App = () => {
 
           <form
             onChange={onChangeTheme}
-            className="col-1 row-1 grid grid-cols-[1fr_min-content_1fr] self-center 
+            className="col-1 row-1 grid grid-cols-[1fr_1px_1fr] self-center overflow-hidden
             justify-self-end rounded border border-white/20 p-0 text-fluid-base text-white/40"
           >
             <label
@@ -107,7 +106,7 @@ const App = () => {
               />
             </label>
 
-            <hr className="h-full w-px bg-white/20" />
+            <hr className="h-full text-transparent bg-white/20" />
 
             <label
               htmlFor="light"
@@ -192,7 +191,7 @@ const App = () => {
 
           {/* summary */}
           <section className="cv-section">
-            <h2 className="cv-title text-fluid-3xl text-blue-900 dark:text-blue-600">
+            <h2 className="cv-title text-fluid-3xl text-pink-900 dark:text-pink-600">
               {t('summary')}
             </h2>
             <p className="cv-text">{t('summaryValue')}</p>
@@ -200,7 +199,7 @@ const App = () => {
 
           {/* experience */}
           <section className="cv-section">
-            <h2 className="cv-title text-fluid-3xl text-blue-900 dark:text-blue-600">
+            <h2 className="cv-title text-fluid-3xl text-pink-900 dark:text-pink-600">
               {t('experience')}
             </h2>
 
@@ -212,10 +211,10 @@ const App = () => {
                 <h4 className="text-slate-950 dark:text-zinc-300/80">
                   {experience.at}
                 </h4>
-                <div className="col-2 row-1 justify-self-end text-fluid-base font-semibold text-blue-900 dark:text-blue-600">
+                <div className="col-2 row-1 justify-self-end text-fluid-base font-semibold text-pink-900 dark:text-pink-600">
                   {experience.duration}
                 </div>
-                <div className="justify-self-end text-fluid-base font-semibold text-blue-900 dark:text-blue-600/90">
+                <div className="justify-self-end text-fluid-base font-semibold text-pink-900 dark:text-pink-600/90">
                   {experience.location}
                 </div>
                 <div
