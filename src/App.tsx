@@ -45,12 +45,12 @@ const App = () => {
         <div className="col-2 grid gap-y-8 p-4">
           <form
             onChange={onChangeLanguage}
-            className="col-1 row-1 grid grid-cols-[1fr_min-content_1fr] self-center 
-            justify-self-start rounded border border-white/20 p-0 text-fluid-base text-white/40"
+            className="col-1 row-1 grid grid-cols-[1fr_1px_1fr] self-center justify-self-start
+            overflow-hidden rounded border border-white/20 p-0 text-fluid-base text-white/40"
           >
             <label
               htmlFor="ru"
-              className="p-2 data-[active='true']:bg-white/20 data-[active='true']:text-white"
+              className="p-2 data-[active='true']:bg-white/10 data-[active='true']:text-white"
               data-active={i18n.language === 'ru'}
             >
               <span>RU</span>
@@ -64,7 +64,7 @@ const App = () => {
               />
             </label>
 
-            <hr className="h-full w-px bg-white/20" />
+            <hr className="h-full bg-white/20 text-transparent" />
 
             <label
               htmlFor="en"
@@ -85,8 +85,8 @@ const App = () => {
 
           <form
             onChange={onChangeTheme}
-            className="col-1 row-1 grid grid-cols-[1fr_min-content_1fr] self-center 
-            justify-self-end rounded border border-white/20 p-0 text-fluid-base text-white/40"
+            className="col-1 row-1 grid grid-cols-[1fr_1px_1fr] self-center justify-self-end
+            overflow-hidden rounded border border-white/20 p-0 text-fluid-base text-white/40"
           >
             <label
               htmlFor="dark"
@@ -107,7 +107,7 @@ const App = () => {
               />
             </label>
 
-            <hr className="h-full w-px bg-white/20" />
+            <hr className="h-full bg-white/20 text-transparent" />
 
             <label
               htmlFor="light"
