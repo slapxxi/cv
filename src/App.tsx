@@ -38,7 +38,7 @@ const App = () => {
       <aside
         className="col-[aside] grid auto-rows-min grid-cols-subgrid self-start overflow-y-auto bg-linear-to-b  
         bg-[url('~/assets/pattern.svg'),linear-gradient(to_bottom,var(--color-pink-950),var(--color-pink-900))]
-        from-pink-950 to-pink-900 bg-size-[30px] text-white 
+        from-pink-950 to-pink-900 bg-size-[19%] text-white 
         md:sticky md:top-0 md:h-screen"
       >
         <div className="col-2 grid gap-y-8 p-4">
@@ -49,7 +49,8 @@ const App = () => {
           >
             <label
               htmlFor="ru"
-              className="inline-grid place-items-center p-2 data-[active='true']:bg-white/10 data-[active='true']:text-white"
+              className="inline-grid place-items-center p-2 backdrop-blur-xs
+              data-[active='true']:bg-white/10 data-[active='true']:text-white"
               data-active={i18n.language === 'ru'}
             >
               <span className="text-fluid-base">RU</span>
@@ -67,7 +68,7 @@ const App = () => {
 
             <label
               htmlFor="en"
-              className="inline-grid place-items-center p-2 data-[active='true']:bg-white/10 data-[active='true']:text-white"
+              className="inline-grid place-items-center backdrop-blur-xs p-2 data-[active='true']:bg-white/10 data-[active='true']:text-white"
               data-active={i18n.language === 'en'}
             >
               <span className="text-fluid-base">EN</span>
@@ -89,7 +90,7 @@ const App = () => {
           >
             <label
               htmlFor="dark"
-              className="inline-grid place-items-center p-2 
+              className="inline-grid place-items-center p-2 backdrop-blur-xs 
               data-[active='true']:bg-white/10 data-[active='true']:text-white"
               data-active={theme === 'dark'}
             >
@@ -110,7 +111,7 @@ const App = () => {
 
             <label
               htmlFor="light"
-              className="inline-grid place-items-center p-2 
+              className="inline-grid place-items-center p-2 backdrop-blur-xs
               data-[active='true']:bg-white/10 data-[active='true']:text-white"
               data-active={theme === 'light'}
             >
