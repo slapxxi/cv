@@ -6,6 +6,7 @@ import LinkedinIcon from '~/assets/linkedin-icon.svg?react'
 const config = {
   skills: [
     'React',
+    'Vue',
     'TypeScript',
     'Next.js',
     'Redux',
@@ -21,7 +22,7 @@ const config = {
       href: 'mailto:slava@pavlutin.dev',
     },
     {
-      name: 'LinkedIn',
+      name: 'slapxxi',
       Icon: LinkedinIcon,
       href: 'https://www.linkedin.com/in/slapxxi',
     },

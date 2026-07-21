@@ -16,17 +16,25 @@
   .cv-section {
     @apply grid gap-y-6 text-white/90;
 
+    @media print {
+      @apply gap-y-1 text-slate-950/90;
+    }
+
     .cv-title {
       @apply text-white;
+
+      @media print {
+        @apply text-slate-950/90;
+      }
     }
   }
 
   .cv-text {
-    @apply text-fluid-lg text-slate-950 opacity-90 dark:text-gray-100/90;
+    @apply text-fluid-lg text-slate-950 opacity-90 dark:text-gray-100/90 print:text-sm;
   }
 
   .cv-content {
-    @apply text-fluid-base text-slate-950 dark:text-gray-100/90;
+    @apply text-fluid-base text-slate-950 dark:text-gray-100/90 print:text-sm;
 
     ul {
       list-style: disc;

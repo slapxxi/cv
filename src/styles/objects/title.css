@@ -6,6 +6,10 @@
   .cv-title {
     @apply text-fluid-3xl inline-grid font-semibold uppercase;
 
+    @media print {
+      @apply text-lg;
+    }
+
     &::after {
       @apply block w-full h-0.5 bg-current mt-1;
       content: '';

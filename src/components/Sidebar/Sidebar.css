@@ -1,0 +1,28 @@
+@layer components {
+  .sidebar {
+    overflow-y: auto;
+    grid-area: aside;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-auto-rows: min-content;
+    background-image:
+      url('~/assets/pattern.svg'),
+      linear-gradient(to bottom, var(--color-blue-950), var(--color-blue-900));
+    background-size: 10px;
+    break-before: page;
+    color: var(--color-white);
+
+    @media (min-width: 48rem) {
+      align-self: start;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      height: 100dvh;
+    }
+
+    @media print {
+      background: none;
+      color: var(--color-slate-950);
+    }
+  }
+}

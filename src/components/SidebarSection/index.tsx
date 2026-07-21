@@ -9,10 +9,10 @@ export const SidebarSection: React.FC<SidebarProps> = (props) => {
 
   return (
     <section className="cv-section justify-items-start">
-      <h2 className="cv-title text-fluid-3xl">{title}</h2>
+      <h2 className="cv-title text-fluid-3xl print:text-lg">{title}</h2>
 
       {items && (
-        <ul className="grid gap-2 md:grid-cols-2 print:flex">
+        <ul className="grid flex-wrap gap-2 md:grid-cols-2 print:flex">
           {items.map((item) => (
             <li key={item}>{item}</li>
           ))}
