@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Sidebar } from '~/components'
 import { useTheme } from '~/hooks'
@@ -5,6 +6,7 @@ import { useTheme } from '~/hooks'
 const App = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
+  const [contentEditingEnabled, setContentEditingEnabled] = useState(false)
 
   const experience = t('experienceList', { returnObjects: true }) as {
     title: string
@@ -14,10 +16,30 @@ const App = () => {
     description: string
   }[]
 
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setContentEditingEnabled(false)
+        return
+      }
+      if (e.key === 'Enter' && e.shiftKey) {
+        setContentEditingEnabled(true)
+        return
+      }
+    }
+
+    window.addEventListener('keydown', handler)
+
+    return () => {
+      window.removeEventListener('keydown', handler)
+    }
+  }, [])
+
   return (
     <div
-      className="wrapper dark:bg-zinc-950 dark:text-white"
+      className="group wrapper dark:bg-zinc-950 dark:text-white"
       data-theme={theme}
+      contentEditable={contentEditingEnabled}
     >
       <Sidebar />
 
@@ -61,7 +83,7 @@ const App = () => {
             {experience.map((experience) => (
               <article
                 key={experience.title}
-                className="grid grid-cols-2 break-inside-avoid"
+                className="grid break-inside-avoid grid-cols-2"
               >
                 <h3 className="cv-subtitle text-slate-950 dark:text-zinc-200">
                   {experience.title}

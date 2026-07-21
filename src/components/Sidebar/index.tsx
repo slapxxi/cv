@@ -117,7 +117,8 @@ export const Sidebar = () => {
           alt=""
           className="col-1 row-1 mx-auto aspect-square size-24 
             self-center justify-self-center rounded-full border-4 object-cover 
-            md:size-40 
+            group-[[contenteditable=true]]:border-orange-900 
+            md:size-40
             print:hidden"
         />
 
