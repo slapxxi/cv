@@ -24,7 +24,7 @@
       @apply text-white;
 
       @media print {
-        @apply text-slate-950/90;
+        @apply text-blue-900/90;
       }
     }
   }

@@ -9,7 +9,6 @@
       url('~/assets/pattern.svg'),
       linear-gradient(to bottom, var(--color-blue-950), var(--color-blue-900));
     background-size: 10px;
-    break-before: page;
     color: var(--color-white);
 
     @media (min-width: 48rem) {

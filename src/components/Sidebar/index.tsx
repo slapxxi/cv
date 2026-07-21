@@ -23,7 +23,7 @@ export const Sidebar = () => {
 
   return (
     <aside className="sidebar">
-      <div className="col-2 grid gap-y-8 p-4 print:gap-y-1">
+      <div className="col-2 grid gap-y-8 p-4 print:gap-y-1 print:py-0">
         <form
           onChange={onChangeLanguage}
           className="col-1 row-1 grid grid-cols-[1fr_1px_1fr] self-center justify-self-start overflow-hidden

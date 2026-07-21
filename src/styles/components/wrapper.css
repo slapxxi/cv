@@ -2,7 +2,7 @@
   .wrapper {
     display: grid;
     grid-template-columns: [aside] 1fr [main] auto [main-end] 1fr [aside-end];
-    grid-template-rows: [aside main] auto [aside-end main-end];
+    grid-template-rows: [aside] min-content auto [aside-end main];
     min-height: 100vh;
     column-gap: calc(var(--spacing) * 2);
 
@@ -10,6 +10,7 @@
       grid-template-columns:
         [aside] 1fr minmax(auto, 480px) [aside-end main] minmax(auto, 960px)
         [main-end] 1fr;
+      grid-template-rows: [aside] min-content auto [aside-end];
     }
 
     @media print {

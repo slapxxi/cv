@@ -43,29 +43,29 @@ const App = () => {
     >
       <Sidebar />
 
+      <div
+        className="col-[main] grid gap-2 rounded bg-gray-300 p-7 text-center my-2
+      dark:bg-zinc-800 
+      print:gap-0 print:bg-transparent print:px-4 print:p-0 print:text-left print:mb-0"
+      >
+        <h1 className="title text-fluid-5xl text-zinc-800 dark:text-zinc-200 print:text-3xl">
+          {t('name')}
+        </h1>
+        <hr
+          className="mx-auto w-full max-w-prose border 
+      border-slate-900/20 dark:border-zinc-700/50 print:hidden"
+        />
+        <h2
+          className="text-fluid-3xl text-gray-600 uppercase 
+      dark:text-zinc-400/80 
+      print:text-lg print:normal-case"
+        >
+          {t('position')}
+        </h2>
+      </div>
+
       <main className="col-[main] grid grid-cols-subgrid">
         <div className="col-1 grid auto-rows-min gap-y-8 p-4 print:gap-y-2">
-          <header
-            className="grid gap-2 rounded bg-gray-300 p-7 text-center 
-            dark:bg-zinc-800 
-              print:gap-0 print:bg-transparent print:p-0 print:text-left"
-          >
-            <h1 className="title text-fluid-5xl text-zinc-800 dark:text-zinc-200 print:text-3xl">
-              {t('name')}
-            </h1>
-            <hr
-              className="mx-auto w-full max-w-prose border 
-            border-slate-900/20 dark:border-zinc-700/50 print:hidden"
-            />
-            <h2
-              className="text-fluid-3xl text-gray-600 uppercase 
-              dark:text-zinc-400/80 
-              print:text-lg print:normal-case"
-            >
-              {t('position')}
-            </h2>
-          </header>
-
           {/* summary */}
           <section className="cv-section">
             <h2 className="cv-title text-fluid-3xl text-blue-900 dark:text-blue-600 print:text-lg">
