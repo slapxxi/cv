@@ -6,12 +6,11 @@
 @import '~/styles/utilities.css';
 @import '~/styles/base.css';
 
+@import '~/styles/objects/title.css';
+
 @import '~/styles/components/wrapper.css';
 @import '~/styles/components/button.css';
-@import '~/styles/components/title.css';
 @import '~/styles/components/link.css';
-
-@custom-variant dark (&:where(.dark, .dark *));
 
 @layer components {
   .cv-section {

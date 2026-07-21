@@ -4,6 +4,7 @@ import DarkThemeIcon from '~/assets/dark-theme-icon.svg?react'
 import profileImage from '~/assets/me.jpg'
 import { useTheme } from '~/hooks'
 import config from './config'
+import { SidebarSection } from './components'
 
 const App = () => {
   const { t, i18n } = useTranslation()
@@ -29,14 +30,11 @@ const App = () => {
 
   return (
     <div
-      className="grid min-h-screen 
-      grid-cols-[[aside]1fr_[main]auto[main-end]_1fr[aside-end]] gap-2
-      md:grid-cols-[[aside]1fr_minmax(auto,480px)[aside-end_main]minmax(auto,960px)_1fr[main-end]] dark:bg-zinc-950 
-      dark:text-white"
+      className="wrapper dark:bg-zinc-950 dark:text-white"
       data-theme={theme}
     >
       <aside
-        className="col-[aside] grid auto-rows-min grid-cols-subgrid self-start overflow-y-auto 
+        className="col-[aside] row-[aside] grid auto-rows-min grid-cols-subgrid self-start overflow-y-auto 
         bg-linear-to-b  
         bg-[url('~/assets/pattern.svg'),linear-gradient(to_bottom,var(--color-blue-950),var(--color-blue-900))]
         from-blue-950 to-blue-900 bg-size-[10px] text-white 
@@ -45,8 +43,9 @@ const App = () => {
         <div className="col-2 grid gap-y-8 p-4">
           <form
             onChange={onChangeLanguage}
-            className="col-1 row-1 grid grid-cols-[1fr_1px_1fr] self-center justify-self-start
-            overflow-hidden rounded border border-white/20 p-0 text-fluid-base text-white/40"
+            className="col-1 row-1 grid grid-cols-[1fr_1px_1fr] self-center justify-self-start overflow-hidden
+            rounded border border-white/20 p-0 text-fluid-base text-white/40 
+            print:hidden"
           >
             <label
               htmlFor="ru"
@@ -86,7 +85,8 @@ const App = () => {
           <form
             onChange={onChangeTheme}
             className="col-1 row-1 grid grid-cols-[1fr_1px_1fr] self-center justify-self-end
-            overflow-hidden rounded border border-white/20 p-0 text-fluid-base text-white/40"
+            overflow-hidden rounded border border-white/20 p-0 text-fluid-base text-white/40 
+            print:hidden"
           >
             <label
               htmlFor="dark"
@@ -132,12 +132,15 @@ const App = () => {
           <img
             src={profileImage}
             alt=""
-            className="col-1 row-1 mx-auto aspect-square size-24 self-center justify-self-center rounded-full border-4 object-cover md:size-40"
+            className="col-1 row-1 mx-auto aspect-square size-24 
+            self-center justify-self-center rounded-full border-4 object-cover 
+            md:size-40 
+            print:hidden"
           />
 
           <section className="cv-section justify-items-start">
             <h2 className="cv-title">{t('contact')}</h2>
-            <ul className="grid gap-3">
+            <ul className="grid gap-3 print:flex">
               {config.contacts.map((contact) => (
                 <li key={contact.name}>
                   <a
@@ -152,28 +155,9 @@ const App = () => {
             </ul>
           </section>
 
-          <section className="cv-section justify-items-start">
-            <h2 className="cv-title text-fluid-3xl">{t('skills')}</h2>
-            <ul className="grid gap-2 md:grid-cols-2">
-              {skills.map((skill) => (
-                <li key={skill}>{skill}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="cv-section justify-items-start">
-            <h2 className="cv-title text-fluid-3xl">{t('languages')}</h2>
-            <ul className="grid gap-2">
-              {languages.map((language) => (
-                <li key={language}>{language}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="cv-section justify-items-start">
-            <h2 className="cv-title text-fluid-3xl">{t('education')}</h2>
-            <p>{t('educationValue')}</p>
-          </section>
+          <SidebarSection title={t('skills')} items={skills} />
+          <SidebarSection title={t('languages')} items={languages} />
+          <SidebarSection title={t('education')} text={t('educationValue')} />
         </div>
       </aside>
 
